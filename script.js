@@ -6,13 +6,28 @@ const onScroll = () => {
 window.addEventListener('scroll', onScroll);
 onScroll();
 
-// ===================== MOBILE NAV =====================
-const burger = document.getElementById('burger');
-const nav = document.getElementById('nav');
-burger.addEventListener('click', () => nav.classList.toggle('open'));
-nav.querySelectorAll('.nav__link').forEach((link) =>
-  link.addEventListener('click', () => nav.classList.remove('open'))
-);
+// ===================== MOBILE TAB BAR (scrollspy) =====================
+const tabbar = document.getElementById('tabbar');
+if (tabbar) {
+  const tabs = Array.from(tabbar.querySelectorAll('.tabbar__item'));
+  const sections = tabs
+    .map((t) => document.getElementById(t.dataset.section))
+    .filter(Boolean);
+
+  const setActive = (id) => {
+    tabs.forEach((t) => t.classList.toggle('active', t.dataset.section === id));
+  };
+
+  const spy = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) setActive(entry.target.id);
+      });
+    },
+    { rootMargin: '-45% 0px -50% 0px', threshold: 0 }
+  );
+  sections.forEach((s) => spy.observe(s));
+}
 
 // ===================== SLIDERS (программа + отзывы) =====================
 function initSlider(trackId, prevId, nextId) {

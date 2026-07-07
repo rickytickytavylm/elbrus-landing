@@ -33,9 +33,6 @@
           <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21.94 4.3 3.5 11.4c-1.1.44-1.09 1.05-.2 1.32l4.73 1.48 1.83 5.6c.22.62.11.86.76.86.5 0 .72-.23 1-.5l2.42-2.36 4.9 3.62c.9.5 1.55.24 1.77-.83l3.2-15.1c.33-1.32-.5-1.92-1.77-1.51Z"/></svg>
         </a>
         <a href="#form" class="btn btn--primary header__cta">Оставить заявку</a>
-        <button class="burger" id="burger" aria-label="Меню">
-          <span></span><span></span><span></span>
-        </button>
       </div>
     </div>
   </header>
@@ -519,7 +516,7 @@
       <div class="footer__grid">
         <div class="footer__brand">
           <a href="#hero" class="logo logo--light">
-            <img src="assets/logo.png" alt="Выше гор" class="footer__logo-img" />
+            <img src="assets/new_white_logo.png" alt="Выше гор" class="footer__logo-img" />
           </a>
           <p class="footer__desc">
             Авторские путешествия в горы Кавказа
@@ -556,6 +553,30 @@
       </div>
     </div>
   </footer>
+
+  <!-- ======================= МОБИЛЬНАЯ ПАНЕЛЬ (iOS tab bar) ======================= -->
+  <nav class="tabbar" id="tabbar" aria-label="Навигация">
+    <a href="#hero" class="tabbar__item" data-section="hero">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V20a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V9.5"/></svg>
+      <span>Обзор</span>
+    </a>
+    <a href="#program" class="tabbar__item" data-section="program">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="16" rx="2.5"/><path d="M3 9h18M8 3v3M16 3v3"/></svg>
+      <span>Программа</span>
+    </a>
+    <a href="#guides" class="tabbar__item" data-section="guides">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="8" r="3.2"/><path d="M3.5 20a5.5 5.5 0 0 1 11 0"/><path d="M16 5.2a3.2 3.2 0 0 1 0 5.6M17.5 20a5.5 5.5 0 0 0-3-4.9"/></svg>
+      <span>Гиды</span>
+    </a>
+    <a href="#price" class="tabbar__item" data-section="price">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 13.3 13.3 20.5a2 2 0 0 1-2.8 0l-7-7a2 2 0 0 1-.5-1.9L4.5 4.2A2 2 0 0 1 6 3l7.4-1.5a2 2 0 0 1 1.9.5l4.2 4.2"/><circle cx="8" cy="8" r="1.4"/></svg>
+      <span>Цена</span>
+    </a>
+    <a href="#form" class="tabbar__item tabbar__item--cta" data-section="form">
+      <svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 4 3 11l6 2.5L11.5 20 21 4Z"/><path d="M9 13.5 21 4"/></svg>
+      <span>Заявка</span>
+    </a>
+  </nav>
 
   <script src="script.js"></script>
 </body>
