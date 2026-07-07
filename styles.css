@@ -314,6 +314,15 @@ ul { list-style: none; }
   border-radius: var(--radius);
   padding: clamp(32px, 5vw, 64px);
 }
+.about__block-text {
+  max-width: 780px;
+  margin: 0 auto;
+  text-align: center;
+  font-size: clamp(18px, 2.2vw, 23px);
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-soft);
+}
 .about__block-lead {
   font-size: clamp(19px, 2.4vw, 26px);
   font-weight: 700;
