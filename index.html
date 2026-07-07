@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Выше обстоятельств — путешествие в горы Приэльбрусья</title>
+  <meta name="description" content="Авторский тур в Приэльбрусье, где встречаются сила природы и глубина личностной работы. 10–13 сентября 2026." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- ======================= HEADER / NAV ======================= -->
+  <header class="header" id="header">
+    <div class="container header__inner">
+      <a href="#hero" class="logo">
+        <img src="assets/new_white_logo.png" alt="Выше гор" class="logo__img logo__img--light" />
+        <img src="assets/new_black_logo.png" alt="Выше гор" class="logo__img logo__img--dark" />
+      </a>
+
+      <nav class="nav" id="nav">
+        <a href="#about" class="nav__link">О путешествии</a>
+        <a href="#program" class="nav__link">Программа</a>
+        <a href="#guides" class="nav__link">Проводники</a>
+        <a href="#price" class="nav__link">Стоимость</a>
+        <a href="#reviews" class="nav__link">Отзывы</a>
+      </nav>
+
+      <div class="header__right">
+        <a href="https://t.me/VladimirZemelkin" target="_blank" rel="noopener" class="header__tg" aria-label="Telegram">
+          <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M21.94 4.3 3.5 11.4c-1.1.44-1.09 1.05-.2 1.32l4.73 1.48 1.83 5.6c.22.62.11.86.76.86.5 0 .72-.23 1-.5l2.42-2.36 4.9 3.62c.9.5 1.55.24 1.77-.83l3.2-15.1c.33-1.32-.5-1.92-1.77-1.51Z"/></svg>
+        </a>
+        <a href="#form" class="btn btn--primary header__cta">Оставить заявку</a>
+        <button class="burger" id="burger" aria-label="Меню">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- ======================= 1 ЭКРАН — HERO ======================= -->
+  <section class="hero" id="hero">
+    <div class="hero__bg">
+      <picture>
+        <source media="(orientation: portrait)" srcset="assets/finale_hero_mob.png" />
+        <img src="assets/finale_hero.png" alt="Горы Приэльбрусья" class="hero__bg-img" />
+      </picture>
+    </div>
+    <div class="hero__overlay"></div>
+
+    <div class="container hero__content">
+      <p class="hero__kicker">Приэльбрусье · 10–13 сентября 2026</p>
+      <h1 class="hero__title">Выше<br>обстоятельств</h1>
+      <p class="hero__subtitle">
+        Путешествие в горы Приэльбрусья, где встречаются
+        сила природы и глубина личностной работы
+      </p>
+      <div class="hero__actions">
+        <a href="#program" class="btn btn--primary btn--lg">Узнать подробнее</a>
+        <a href="#about" class="btn btn--ghost btn--lg">О путешествии</a>
+      </div>
+    </div>
+
+    <!-- нижняя часть экрана: инфо-бар -->
+    <div class="container">
+      <div class="infobar">
+        <div class="infobar__item">
+          <span class="infobar__label">Возраст</span>
+          <span class="infobar__value">18+</span>
+        </div>
+        <div class="infobar__divider"></div>
+        <div class="infobar__item">
+          <span class="infobar__label">Группа</span>
+          <span class="infobar__value">
+            <span class="infobar__long">18 человек</span>
+            <span class="infobar__short">до 18 чел.</span>
+          </span>
+        </div>
+        <div class="infobar__divider"></div>
+        <div class="infobar__item">
+          <span class="infobar__label">Даты</span>
+          <span class="infobar__value">
+            <span class="infobar__long">10–13 сентября 2026</span>
+            <span class="infobar__short">10–13 сен 2026</span>
+          </span>
+        </div>
+        <div class="infobar__divider"></div>
+        <div class="infobar__item">
+          <span class="infobar__label">Сложность</span>
+          <span class="infobar__value">
+            <span class="stars"><i class="on">★</i><i class="off">★</i><i class="off">★</i><i class="off">★</i><i class="off">★</i></span>
+            <span class="infobar__hint">1 из 5</span>
+          </span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 2 ЭКРАН — О ПУТЕШЕСТВИИ ======================= -->
+  <section class="section about" id="about">
+    <div class="container">
+      <div class="about__lead">
+        <p class="about__intro">
+          Отправляемся в горы Кавказа, чтобы совместить активный отдых
+          с психологическими практиками:
+        </p>
+        <ul class="about__list">
+          <li>управление тревогой и стрессом</li>
+          <li>понимание своих ценностей и приоритетов</li>
+          <li>ощущение внутренней опоры</li>
+        </ul>
+        <p class="about__text">
+          Тренинг будет проходить в Приэльбрусье — одном из самых живописных мест страны.
+          Каждый день мы будем просыпаться с видом на горы, ходить в треккинги до водопадов
+          и горных озёр. Всё путешествие пройдёт в комфортном и безопасном пространстве,
+          <strong>с поддержкой людей, которые пройдут этот путь вместе с вами.</strong>
+        </p>
+      </div>
+
+      <div class="about__block">
+        <p class="about__block-lead">
+          Западный Кавказ предлагает удивительное сочетание заснеженных вершин,
+          голубых озёр, цветущих лугов и бурлящих рек. В этих местах можно найти
+          стоянки первобытных людей, археологические древности и глубочайшие в мире
+          пещеры. Близость моря сказывается на климате, делая его более влажным,
+          склоны увешаны растительностью, покрыты цветущими лугами и густыми
+          хвойными лесами.
+        </p>
+        <div class="about__cols">
+          <p>
+            Мы отправляемся в дикие места, где за сезон едва проходит пара туристических
+            групп. С середины лета на склонах гор созревает черника, дожди становятся
+            редкими. Тропы мы прокладываем сами, а с перевала нам откроются уникальные
+            виды — достойная награда первопроходцам.
+          </p>
+          <p>
+            Маршрут требует среднего уровня физической подготовки. Будем много ходить,
+            много отдыхать, купаться в озёрах, водопадах и ручьях. Меньший вес рюкзаков,
+            несложные перевалы, продуманный маршрут — всё это позволит сделать наш
+            трекинг в горах комфортнее.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 3 ЭКРАН — ГРУППОВОЕ ФОТО ======================= -->
+  <section class="section-flush groupshot">
+    <div class="groupshot__img">
+      <picture>
+        <source media="(orientation: portrait)" srcset="assets/team_mobile.png" />
+        <img src="assets/team_desktop.png" alt="Команда путешествия" class="groupshot__bg-img" />
+      </picture>
+    </div>
+    <div class="groupshot__overlay"></div>
+    <div class="container groupshot__caption">
+      <h2>Иногда, чтобы найти ответы,<br>нужно подняться выше привычного</h2>
+    </div>
+  </section>
+
+  <!-- ======================= 4 ЭКРАН — ПРОГРАММА ======================= -->
+  <section class="section program" id="program">
+    <div class="container">
+      <div class="program__head">
+        <h2 class="section__title">Программа путешествия</h2>
+        <div class="slider__nav">
+          <button class="slider__btn" id="progPrev" aria-label="Назад">‹</button>
+          <button class="slider__btn" id="progNext" aria-label="Вперёд">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="program__track" id="progTrack">
+      <!-- день 1 -->
+      <article class="day-card">
+        <div class="day-card__media">
+          <img src="assets/first_day_new.jpg" alt="День 1 — знакомство с Приэльбрусьем" />
+        </div>
+        <div class="day-card__body">
+          <span class="day-card__badge">день 1</span>
+          <h3 class="day-card__title">Знакомство с Приэльбрусьем</h3>
+          <p class="day-card__text">
+            Прибытие в аэропорт Минеральные Воды до 12:00, трансфер до поляны Чегет
+            по живописному Баксанскому ущелью. Заселение в отель с видом на горы,
+            обед национальной кавказской кухней.
+          </p>
+          <p class="day-card__text">
+            Знакомство друг с другом в формате интерактивного тренинга, где каждый
+            сформулирует для себя личный запрос: с чем хочет работать эти дни.
+          </p>
+          <div class="day-card__tags">
+            <span class="tag">Минеральные Воды</span>
+            <span class="tag">Баксанское ущелье</span>
+            <span class="tag">Поляна Чегет</span>
+          </div>
+          <div class="day-card__meta">🚌 Время в дороге: 4 часа</div>
+        </div>
+      </article>
+
+      <!-- день 2 -->
+      <article class="day-card">
+        <div class="day-card__media">
+          <img src="assets/second_day.jpg" alt="День 2 — тренинг и практики" />
+        </div>
+        <div class="day-card__body">
+          <span class="day-card__badge">день 2</span>
+          <h3 class="day-card__title">Тренинг и глубокие практики в окружении гор</h3>
+          <p class="day-card__text">
+            День, который мы посвятим работе со стрессом и тому, как он влияет
+            на эмоциональное и физическое состояние. Отдельное внимание уделим
+            причинам потери внутренней опоры и способам её восстановления через
+            ценности, тело, ясность мышления и поддержку.
+          </p>
+          <p class="day-card__text">
+            Много теоретической и практической части в атмосфере спокойствия,
+            заботы и безопасности. С обязательным перерывом на прогулку вдоль
+            горной реки и вкусный обед :)
+          </p>
+          <div class="day-card__tags">
+            <span class="tag">работа со стрессом</span>
+            <span class="tag">внутренняя опора</span>
+            <span class="tag">практики</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- день 3 -->
+      <article class="day-card">
+        <div class="day-card__media">
+          <img src="assets/third_day.jpg" alt="День 3 — треккинг до водопада Девичьи Косы" />
+        </div>
+        <div class="day-card__body">
+          <span class="day-card__badge">день 3</span>
+          <h3 class="day-card__title">Треккинг до водопада Девичьи Косы</h3>
+          <p class="day-card__text">
+            Сегодня — идеальный день, чтобы замедлиться и осознанно познакомиться
+            с собой на горной тропе. Нас ждёт неспешный треккинг с видами на Главный
+            Кавказский хребет, вкусный пикник у водопада Девичьи Косы и разговоры
+            о важном в компании новых друзей.
+          </p>
+          <p class="day-card__text">
+            После ужина: вечерняя группа и рефлексия дня.
+          </p>
+          <div class="day-card__tags">
+            <span class="tag">водопад Девичьи Косы</span>
+            <span class="tag">пикник</span>
+            <span class="tag">рефлексия</span>
+          </div>
+          <div class="day-card__meta">🥾 Дневной километраж: 12 км</div>
+        </div>
+      </article>
+
+      <!-- день 4 -->
+      <article class="day-card">
+        <div class="day-card__media">
+          <img src="assets/four_dayjpg.jpg" alt="День 4 — подъём на гору Чегет" />
+        </div>
+        <div class="day-card__body">
+          <span class="day-card__badge">день 4</span>
+          <h3 class="day-card__title">Подъём на гору Чегет и возвращение домой</h3>
+          <p class="day-card__text">
+            После раннего завтрака отправляемся на склоны горы Чегет. Прокатимся
+            на кресельной канатной дороге, увидим Главный Кавказский хребет и
+            величественный Эльбрус с самого лучшего ракурса.
+          </p>
+          <p class="day-card__text">
+            После обеда — тёплое прощание с Приэльбрусьем и трансфер обратно
+            в Минеральные Воды.
+          </p>
+          <div class="day-card__tags">
+            <span class="tag">гора Чегет</span>
+            <span class="tag">канатная дорога</span>
+            <span class="tag">вид на Эльбрус</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= 5 ЭКРАН — ПРОВОДНИКИ ======================= -->
+  <section class="section guides" id="guides">
+    <div class="container">
+      <h2 class="section__title section__title--center">Проводники</h2>
+      <div class="guides__list">
+        <article class="guide-card">
+          <div class="guide-card__photo">
+            <img src="assets/vladimir.jpg" alt="Владимир Земелькин" />
+          </div>
+          <div class="guide-card__body">
+            <span class="guide-card__badge">Психолог группы</span>
+            <h3 class="guide-card__name">Владимир Земелькин</h3>
+            <p class="guide-card__role">Практикующий психолог · телесно-ориентированный психотерапевт</p>
+            <p class="guide-card__text">
+              Практикующий психолог более 10 лет, телесно-ориентированный
+              психотерапевт, преподаватель и тренер специализированных программ,
+              а ещё — влюблённый в горы человек.
+            </p>
+            <ul class="guide-card__tags">
+              <li>10+ лет практики</li>
+              <li>Телесно-ориентированная терапия</li>
+              <li>Преподаватель и тренер</li>
+              <li>Влюблён в горы</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="guide-card guide-card--reverse">
+          <div class="guide-card__photo">
+            <img src="assets/polina.jpg" alt="Полина Русакова" />
+          </div>
+          <div class="guide-card__body">
+            <span class="guide-card__badge">Гид группы</span>
+            <h3 class="guide-card__name">Полина Русакова</h3>
+            <p class="guide-card__role">Гид · сооснователь клуба путешествий «Гора»</p>
+            <p class="guide-card__text">
+              Профессиональный турист и гид, сооснователь клуба путешествий «Гора».
+              Влюблена в Приэльбрусье и людей, бережно проведёт по горным тропам
+              Кавказа. Позаботится о комфорте и безопасности группы.
+            </p>
+            <ul class="guide-card__tags">
+              <li>Профессиональный гид</li>
+              <li>Сооснователь клуба «Гора»</li>
+              <li>Забота о группе</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 6 ЭКРАН — СТОИМОСТЬ ======================= -->
+  <section class="section price" id="price">
+    <div class="container">
+      <h2 class="section__title section__title--center">Стоимость тренинга</h2>
+
+      <div class="pricing">
+        <aside class="pricing__panel">
+          <span class="pricing__badge">Всё включено</span>
+          <div class="pricing__amount">56 000 <span>₽</span></div>
+          <p class="pricing__per">за человека · 4 дня в Приэльбрусье</p>
+
+          <ul class="pricing__facts">
+            <li>10–13 сентября 2026</li>
+            <li>Группа до 18 человек</li>
+            <li>Проживание и завтраки включены</li>
+          </ul>
+
+          <a href="#form" class="btn btn--primary btn--lg btn--block">Забронировать место</a>
+          <p class="pricing__note">Бронь без предоплаты — сначала обсудим детали</p>
+        </aside>
+
+        <div class="pricing__details">
+          <div class="pricing__group">
+            <h3 class="pricing__group-title">В стоимость входит</h3>
+            <ul class="pricing__list pricing__list--in">
+              <li>Все трансферы по программе на комфортном микроавтобусе только для нашей группы</li>
+              <li>Работа опытного практикующего психолога и преподавателя-практика</li>
+              <li>Работа опытного руководителя группы и его сопровождение</li>
+              <li>Проживание в отеле в двухместных номерах (3 ночи) с завтраками</li>
+              <li>Обед-пикник в день 3</li>
+              <li>Входные билеты в национальный парк Приэльбрусье</li>
+              <li>Канатная дорога на Чегет</li>
+              <li>Помощь с покупкой авиабилетов и консультация по подбору снаряжения</li>
+            </ul>
+          </div>
+
+          <div class="pricing__group">
+            <h3 class="pricing__group-title pricing__group-title--out">Не входит</h3>
+            <ul class="pricing__list pricing__list--out">
+              <li>Билеты до Минеральных Вод и обратно</li>
+              <li>Обеды и ужины в кафе (до 2000 ₽ в день)</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 7 ЭКРАН — ОТЗЫВЫ ======================= -->
+  <section class="section reviews" id="reviews">
+    <div class="container">
+      <div class="program__head">
+        <h2 class="section__title">Отзывы</h2>
+        <div class="slider__nav">
+          <button class="slider__btn" id="revPrev" aria-label="Назад">‹</button>
+          <button class="slider__btn" id="revNext" aria-label="Вперёд">›</button>
+        </div>
+      </div>
+    </div>
+
+    <div class="reviews__track" id="revTrack">
+      <article class="review">
+        <div class="review__head">
+          <div class="review__ava">АМ</div>
+          <div>
+            <div class="review__name">Анна М.</div>
+            <div class="review__loc">Москва · сентябрь 2025</div>
+            <div class="review__stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review__text">
+          Ехала за перезагрузкой после тяжёлого года и, честно, не особо верила
+          в «психологию в горах». В итоге это оказалось самым бережным, что я делала
+          для себя за долгое время. Владимир объясняет спокойно и по делу, без эзотерики.
+          Вернулась с ощущением, что внутри наконец стало тише.
+        </p>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <div class="review__ava">ДК</div>
+          <div>
+            <div class="review__name">Дмитрий К.</div>
+            <div class="review__loc">Санкт-Петербург · июль 2025</div>
+            <div class="review__stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review__text">
+          Шёл ради гор и треккинга, а получил ещё и повод разобраться с тем, что давно
+          откладывал. Нагрузка комфортная, всё продумано — трансферы, отель, еда.
+          Отдельное спасибо за пикник у водопада: там случился один из лучших
+          разговоров в моей жизни.
+        </p>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <div class="review__ava">ЕС</div>
+          <div>
+            <div class="review__name">Екатерина С.</div>
+            <div class="review__loc">Краснодар · сентябрь 2025</div>
+            <div class="review__stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review__text">
+          Больше всего боялась группы незнакомых людей, но атмосфера сложилась
+          очень тёплая и безопасная. Полина заботится буквально о каждом, с ней
+          спокойно на любой тропе. Разъезжались уже друзьями — до сих пор на связи.
+        </p>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <div class="review__ava">МВ</div>
+          <div>
+            <div class="review__name">Марина В.</div>
+            <div class="review__loc">Екатеринбург · август 2025</div>
+            <div class="review__stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review__text">
+          Формат «отдых плюс работа с собой» звучал странно, но именно это сочетание
+          и цепляет. Днём — горы и виды до мурашек, вечером — практики, после которых
+          реально становится легче дышать. Организация — на высоте.
+        </p>
+      </article>
+
+      <article class="review">
+        <div class="review__head">
+          <div class="review__ava">ИГ</div>
+          <div>
+            <div class="review__name">Игорь Г.</div>
+            <div class="review__loc">Казань · июль 2025</div>
+            <div class="review__stars">★★★★★</div>
+          </div>
+        </div>
+        <p class="review__text">
+          Человек я не самый открытый и настраивался скептически. Но команда не давит,
+          идёшь в своём темпе. Спустя пару недель после поездки замечаю, что спокойнее
+          реагирую на рабочие завалы. Для меня это и есть лучший показатель.
+        </p>
+      </article>
+    </div>
+  </section>
+
+  <!-- ======================= 8 ЭКРАН — ЗАЯВКА ======================= -->
+  <section class="section form-section" id="form">
+    <div class="container">
+      <div class="form-card">
+        <div class="form-card__left">
+          <h2 class="form-card__title">Оставить заявку</h2>
+          <p class="form-card__subtitle">
+            Оставьте контакты — расскажем детали, поможем с билетами
+            и забронируем место в группе. Всего 18 мест.
+          </p>
+          <ul class="form-card__facts">
+            <li>Даты: 10–13 сентября 2026</li>
+            <li>Приэльбрусье, поляна Чегет</li>
+            <li>Стоимость: 56 000 ₽</li>
+          </ul>
+        </div>
+
+        <form class="lead-form" id="leadForm" novalidate>
+          <div class="field">
+            <label for="name">Ваше имя</label>
+            <input type="text" id="name" name="name" placeholder="Как к вам обращаться" required />
+          </div>
+          <div class="field">
+            <label for="phone">Телефон</label>
+            <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
+          </div>
+          <label class="consent">
+            <input type="checkbox" id="consent" name="consent" required />
+            <span>Я согласен(на) на обработку персональных данных
+              и с <a href="#" class="link">политикой конфиденциальности</a>.</span>
+          </label>
+          <button type="submit" class="btn btn--primary btn--lg btn--block">Отправить заявку</button>
+          <p class="form-note" id="formNote" hidden>Спасибо! Заявка отправлена — скоро свяжемся с вами.</p>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================= 9 ЭКРАН — ПОДВАЛ ======================= -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <a href="#hero" class="logo logo--light">
+            <img src="assets/logo.png" alt="Выше гор" class="footer__logo-img" />
+          </a>
+          <p class="footer__desc">
+            Авторские путешествия в горы Кавказа
+            с психологическими практиками.
+          </p>
+          <div class="footer__social-links">
+            <a href="https://t.me/VladimirZemelkin" target="_blank" rel="noopener" aria-label="Telegram">
+              <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M21.94 4.3 3.5 11.4c-1.1.44-1.09 1.05-.2 1.32l4.73 1.48 1.83 5.6c.22.62.11.86.76.86.5 0 .72-.23 1-.5l2.42-2.36 4.9 3.62c.9.5 1.55.24 1.77-.83l3.2-15.1c.33-1.32-.5-1.92-1.77-1.51Z"/></svg>
+            </a>
+          </div>
+        </div>
+
+        <div class="footer__col">
+          <span class="footer__col-title">Навигация</span>
+          <nav class="footer__nav">
+            <a href="#about">О путешествии</a>
+            <a href="#program">Программа</a>
+            <a href="#guides">Проводники</a>
+            <a href="#price">Стоимость</a>
+            <a href="#form">Заявка</a>
+          </nav>
+        </div>
+
+        <div class="footer__col">
+          <span class="footer__col-title">Контакты</span>
+          <a href="tel:+79991216415" class="footer__contact">+7 (999) 121-64-15</a>
+          <span class="footer__contact-note">Приэльбрусье · поляна Чегет</span>
+        </div>
+      </div>
+
+      <div class="footer__bottom">
+        <span>© 2026 Клуб путешествий «Гора». Все права защищены.</span>
+        <a href="#" class="link footer__policy">Политика конфиденциальности</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
