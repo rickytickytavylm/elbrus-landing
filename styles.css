@@ -732,7 +732,7 @@ ul { list-style: none; }
 
   .header { padding: 14px 0; }
   .header.scrolled { padding: 10px 0; }
-  .logo__img { height: 74px; }
+  .logo__img { height: 52px; }
 
   .hero { padding-top: 100px; padding-bottom: 28px; }
   .hero__overlay {
