@@ -104,7 +104,7 @@ ul { list-style: none; }
   top: 0; left: 0; right: 0;
   z-index: 100;
   padding: 18px 0;
-  transition: background .3s ease, padding .3s ease, box-shadow .3s ease;
+  transition: background .3s ease, padding .3s ease, box-shadow .3s ease, transform .35s ease, opacity .3s ease;
 }
 .header.scrolled {
   background: rgba(255,255,255,.92);
@@ -181,6 +181,16 @@ ul { list-style: none; }
     backdrop-filter: saturate(180%) blur(22px);
     border: 1px solid rgba(0, 0, 0, .06);
     box-shadow: 0 10px 34px rgba(20, 24, 18, .18);
+    opacity: 0;
+    transform: translateY(150%);
+    pointer-events: none;
+    transition: opacity .3s ease, transform .4s cubic-bezier(.22, 1, .36, 1);
+  }
+  /* навбар появляется только после начала скролла */
+  .header.scrolled ~ .tabbar {
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: auto;
   }
   .tabbar__item {
     flex: 1;
@@ -677,6 +687,13 @@ ul { list-style: none; }
   .nav { display: none; }
   .burger { display: none; }
   .header__cta { display: none; }
+
+  /* на мобиле шапка видна только на старте, при скролле уезжает вверх */
+  .header.scrolled {
+    transform: translateY(-100%);
+    opacity: 0;
+    pointer-events: none;
+  }
 
   /* место под нижнюю панель, чтобы не перекрывала контент */
   .footer { padding-bottom: calc(96px + env(safe-area-inset-bottom, 0px)); }
