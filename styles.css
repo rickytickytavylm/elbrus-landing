@@ -633,6 +633,8 @@ ul { list-style: none; }
 .consent input { margin-top: 3px; width: 17px; height: 17px; accent-color: var(--accent); flex: none; }
 .link { color: var(--accent); font-weight: 700; text-decoration: underline; }
 .form-note { color: var(--accent); font-weight: 700; text-align: center; }
+.form-error { color: #c0533f; font-weight: 600; text-align: center; }
+.field--hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
 .field input.invalid { border-color: #c0533f; }
 
 /* ===================== FOOTER (9 экран) ===================== */

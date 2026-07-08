@@ -574,13 +574,18 @@
             <label for="phone">Телефон</label>
             <input type="tel" id="phone" name="phone" placeholder="+7 (___) ___-__-__" required />
           </div>
+          <div class="field field--hp" aria-hidden="true">
+            <label for="company">Компания</label>
+            <input type="text" id="company" name="company" tabindex="-1" autocomplete="off" />
+          </div>
           <label class="consent">
             <input type="checkbox" id="consent" name="consent" required />
             <span>Я согласен(на) на обработку персональных данных
               и с <a href="#" class="link">политикой конфиденциальности</a>.</span>
           </label>
-          <button type="submit" class="btn btn--primary btn--lg btn--block">Отправить заявку</button>
+          <button type="submit" class="btn btn--primary btn--lg btn--block" id="formSubmit">Отправить заявку</button>
           <p class="form-note" id="formNote" hidden>Спасибо! Заявка отправлена, скоро свяжемся с вами.</p>
+          <p class="form-error" id="formError" hidden>Не удалось отправить заявку. Позвоните нам или напишите в Telegram.</p>
         </form>
       </div>
     </div>

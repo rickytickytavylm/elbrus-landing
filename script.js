@@ -67,12 +67,19 @@ if (phone) {
 }
 
 // ===================== FORM SUBMIT =====================
+const TELEGRAM_TOKEN = '8776882062:AAGJMV3cMdzcqJrAQHc5EgIt4dz2Lh0XURM';
+const TELEGRAM_CHAT_ID = '-5368114000';
+
 const form = document.getElementById('leadForm');
 if (form) {
-  form.addEventListener('submit', (e) => {
+  form.addEventListener('submit', async (e) => {
     e.preventDefault();
     const name = document.getElementById('name');
     const consent = document.getElementById('consent');
+    const honeypot = document.getElementById('company');
+    const note = document.getElementById('formNote');
+    const errNote = document.getElementById('formError');
+    const submitBtn = document.getElementById('formSubmit');
     let ok = true;
 
     [name, phone].forEach((f) => {
@@ -84,10 +91,46 @@ if (form) {
 
     if (!ok) return;
 
-    // ЗДЕСЬ: отправка данных на сервер / в CRM / Telegram-бот.
-    // Пока просто показываем сообщение об успехе.
-    document.getElementById('formNote').hidden = false;
-    form.reset();
+    // Ботов-спамеров отсекаем: honeypot-поле должно быть пустым.
+    if (honeypot && honeypot.value.trim() !== '') {
+      note.hidden = false;
+      form.reset();
+      return;
+    }
+
+    note.hidden = true;
+    errNote.hidden = true;
+
+    const text =
+      '🏔 Новая заявка с сайта\n\n' +
+      'Имя: ' + name.value.trim() + '\n' +
+      'Телефон: ' + phone.value.trim() + '\n' +
+      'Время: ' + new Date().toLocaleString('ru-RU', { timeZone: 'Europe/Moscow' }) + ' (МСК)';
+
+    const originalLabel = submitBtn.textContent;
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Отправляем…';
+
+    try {
+      const res = await fetch(
+        'https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage',
+        {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text }),
+        }
+      );
+      const data = await res.json();
+      if (!res.ok || !data.ok) throw new Error('Telegram API error');
+
+      note.hidden = false;
+      form.reset();
+    } catch (err) {
+      errNote.hidden = false;
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = originalLabel;
+    }
   });
 }
 
