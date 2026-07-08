@@ -53,15 +53,21 @@ initSlider('revTrack', 'revPrev', 'revNext');
 const phone = document.getElementById('phone');
 if (phone) {
   phone.addEventListener('input', (e) => {
-    let d = e.target.value.replace(/\D/g, '');
+    let raw = e.target.value.replace(/\D/g, '');
+    if (raw === '') {
+      e.target.value = '';
+      return;
+    }
+    let d = raw;
     if (d.startsWith('8')) d = '7' + d.slice(1);
     if (!d.startsWith('7')) d = '7' + d;
     d = d.slice(0, 11);
+
     let out = '+7';
     if (d.length > 1) out += ' (' + d.slice(1, 4);
-    if (d.length >= 4) out += ') ' + d.slice(4, 7);
-    if (d.length >= 7) out += '-' + d.slice(7, 9);
-    if (d.length >= 9) out += '-' + d.slice(9, 11);
+    if (d.length > 4) out += ') ' + d.slice(4, 7);
+    if (d.length > 7) out += '-' + d.slice(7, 9);
+    if (d.length > 9) out += '-' + d.slice(9, 11);
     e.target.value = out;
   });
 }
@@ -72,14 +78,20 @@ const TELEGRAM_CHAT_ID = '-5368114000';
 
 const form = document.getElementById('leadForm');
 if (form) {
+  const name = document.getElementById('name');
+  const consent = document.getElementById('consent');
+  const note = document.getElementById('formNote');
+  const errNote = document.getElementById('formError');
+  const submitBtn = document.getElementById('formSubmit');
+
+  const syncSubmitState = () => {
+    submitBtn.disabled = !consent.checked;
+  };
+  consent.addEventListener('change', syncSubmitState);
+  syncSubmitState();
+
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
-    const name = document.getElementById('name');
-    const consent = document.getElementById('consent');
-    const honeypot = document.getElementById('company');
-    const note = document.getElementById('formNote');
-    const errNote = document.getElementById('formError');
-    const submitBtn = document.getElementById('formSubmit');
     let ok = true;
 
     [name, phone].forEach((f) => {
@@ -90,13 +102,6 @@ if (form) {
     if (!consent.checked) ok = false;
 
     if (!ok) return;
-
-    // Ботов-спамеров отсекаем: honeypot-поле должно быть пустым.
-    if (honeypot && honeypot.value.trim() !== '') {
-      note.hidden = false;
-      form.reset();
-      return;
-    }
 
     note.hidden = true;
     errNote.hidden = true;
@@ -116,8 +121,7 @@ if (form) {
         'https://api.telegram.org/bot' + TELEGRAM_TOKEN + '/sendMessage',
         {
           method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ chat_id: TELEGRAM_CHAT_ID, text }),
+          body: new URLSearchParams({ chat_id: TELEGRAM_CHAT_ID, text }),
         }
       );
       const data = await res.json();
@@ -128,8 +132,8 @@ if (form) {
     } catch (err) {
       errNote.hidden = false;
     } finally {
-      submitBtn.disabled = false;
       submitBtn.textContent = originalLabel;
+      syncSubmitState();
     }
   });
 }
