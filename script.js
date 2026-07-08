@@ -54,28 +54,18 @@ const phone = document.getElementById('phone');
 if (phone) {
   phone.addEventListener('input', (e) => {
     // При удалении ничего не переформатируем, чтобы можно было свободно
-    // стирать любой символ (в т.ч. первую цифру и скобки).
+    // стирать любой символ (в т.ч. первую цифру, плюс и скобки).
     if (e.inputType && e.inputType.startsWith('delete')) return;
 
-    const hasPlus = e.target.value.trimStart().startsWith('+');
-    let raw = e.target.value.replace(/\D/g, '');
+    const v = e.target.value.trimStart();
 
-    if (raw === '') {
-      e.target.value = hasPlus ? '+' : '';
-      return;
-    }
+    // Красиво форматируем ТОЛЬКО российские номера: поле начинается с +7 / 7 / 8.
+    // Иначе (иностранный код, например +995) не трогаем ввод вообще.
+    const looksRu = v.startsWith('+7') || v.startsWith('8') || v.startsWith('7');
+    if (!looksRu) return;
 
-    // Международный номер: пользователь сам ввёл + с не-российским кодом.
-    // Не навязываем +7, оставляем как есть.
-    if (hasPlus && !raw.startsWith('7')) {
-      e.target.value = '+' + raw;
-      return;
-    }
-
-    // Российский формат (ввод без +, либо начинается с 7/8).
-    let d = raw;
+    let d = e.target.value.replace(/\D/g, '');
     if (d.startsWith('8')) d = '7' + d.slice(1);
-    if (!d.startsWith('7')) d = '7' + d;
     d = d.slice(0, 11);
 
     let out = '+7';
