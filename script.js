@@ -53,6 +53,10 @@ initSlider('revTrack', 'revPrev', 'revNext');
 const phone = document.getElementById('phone');
 if (phone) {
   phone.addEventListener('input', (e) => {
+    // При удалении ничего не переформатируем, чтобы можно было свободно
+    // стирать любой символ (в т.ч. первую цифру и скобки).
+    if (e.inputType && e.inputType.startsWith('delete')) return;
+
     let raw = e.target.value.replace(/\D/g, '');
     if (raw === '') {
       e.target.value = '';
