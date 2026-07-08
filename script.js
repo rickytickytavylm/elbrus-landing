@@ -57,11 +57,22 @@ if (phone) {
     // стирать любой символ (в т.ч. первую цифру и скобки).
     if (e.inputType && e.inputType.startsWith('delete')) return;
 
+    const hasPlus = e.target.value.trimStart().startsWith('+');
     let raw = e.target.value.replace(/\D/g, '');
+
     if (raw === '') {
-      e.target.value = '';
+      e.target.value = hasPlus ? '+' : '';
       return;
     }
+
+    // Международный номер: пользователь сам ввёл + с не-российским кодом.
+    // Не навязываем +7, оставляем как есть.
+    if (hasPlus && !raw.startsWith('7')) {
+      e.target.value = '+' + raw;
+      return;
+    }
+
+    // Российский формат (ввод без +, либо начинается с 7/8).
     let d = raw;
     if (d.startsWith('8')) d = '7' + d.slice(1);
     if (!d.startsWith('7')) d = '7' + d;
@@ -98,11 +109,14 @@ if (form) {
     e.preventDefault();
     let ok = true;
 
-    [name, phone].forEach((f) => {
-      const valid = f.value.trim().length > (f === phone ? 15 : 1);
-      f.classList.toggle('invalid', !valid);
-      if (!valid) ok = false;
-    });
+    const nameValid = name.value.trim().length > 1;
+    name.classList.toggle('invalid', !nameValid);
+    if (!nameValid) ok = false;
+
+    const phoneValid = phone.value.replace(/\D/g, '').length >= 10;
+    phone.classList.toggle('invalid', !phoneValid);
+    if (!phoneValid) ok = false;
+
     if (!consent.checked) ok = false;
 
     if (!ok) return;
